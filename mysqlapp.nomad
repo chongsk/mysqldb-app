@@ -4,7 +4,7 @@ job "mysqlapp" {
   type        = "batch"
   
   periodic{
-    cron		= "*/2 * * * *"
+    cron		= "*/1 * * * *"
     prohibit_overlap	= true
   }
   
