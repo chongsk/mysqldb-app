@@ -22,7 +22,7 @@ job "mysqlapp" {
         change_signal = "SIGUSR1"
       }	
 
-      driver = "exec"
+      driver = "raw_exec"
 
 	config {
 		command = "cd repo; ./run.sh"
