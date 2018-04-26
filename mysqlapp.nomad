@@ -44,6 +44,8 @@ job "mysqlapp" {
         name = "mysqlapp"
         tags = ["mysql", "app"]
 
+        port = "http"
+        address_mode = "host"
 
         check {
           type     = "http"
@@ -61,6 +63,7 @@ job "mysqlapp" {
         network {
           mbits = 1
           port  "http"{
+			static = 5124		  
           }
         }
       }
