@@ -25,7 +25,8 @@ job "mysqlapp" {
       driver = "raw_exec"
 
 	config {
-		command = "cd repo; ./run.sh"
+		command = "/bin/sh"
+		args    = ["cd repo;", "./run.sh"]
 	}
 
 	artifact {
