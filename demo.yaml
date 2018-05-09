@@ -1,0 +1,10 @@
+datacenter: 'dc1'
+region: 'global'
+
+# Artifact
+version: 'latest'
+
+# Resources
+cpu: 100
+memory: 200
+mbits: 1

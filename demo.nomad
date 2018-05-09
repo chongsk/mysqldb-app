@@ -1,6 +1,6 @@
 job "mysqlapp2" {
-  datacenters = ["dc1"]
-  region      = "global"
+  datacenters = ["[[.datacenter]]"]
+  region      = "[[.region]]"
   type        = "batch"
   
   periodic{
@@ -27,7 +27,7 @@ job "mysqlapp2" {
   driver = "docker"
   
   config {
-    image = "127.0.0.1:5000/cits/mysql_php_consul"
+    image = "127.0.0.1:5000/cits/mysql_php_consul:[[.version]]"
     volumes = ["local/repo2:/usr/src/myapp"]
   }
 
@@ -54,11 +54,11 @@ job "mysqlapp2" {
       }
 
       resources {
-        cpu    = 100
-        memory = 200
+        cpu    = [[.cpu]]
+        memory = [[.memory]]
 
         network {
-          mbits = 1
+          mbits = [[.mbits]]
           port  "http"{}
         }
       }
