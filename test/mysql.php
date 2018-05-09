@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 require_once('/opt/conn.inc.php');
 
-$sql = "insert into parameters( param_code, param_value) select now(), LEFT(UUID(), 4)  from dual";
+$sql = "insert into parameters( param_code, param_value) select now(), LEFT(UUID(), 12)  from dual";
 
 $conn->exec($sql);
 
